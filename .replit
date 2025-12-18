@@ -1,4 +1,4 @@
-run = "php -S 0.0.0.0:80 & php bot_polling.php"
+run = "bash start_replit.sh"
 language = "php-cli"
 entrypoint = "bot_polling.php"
 
@@ -6,4 +6,4 @@ entrypoint = "bot_polling.php"
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "php -S 0.0.0.0:80 & php bot_polling.php"]
+run = ["sh", "-c", "bash start_replit.sh"]
