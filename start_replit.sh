@@ -1,10 +1,16 @@
 #!/bin/bash
 
-# Start PHP web server in background
-php -S 0.0.0.0:${PORT:-80} > /tmp/webserver.log 2>&1 &
-echo "Web server started on port ${PORT:-80}"
+# Get port from Replit environment
+if [ -z "$PORT" ]; then
+  PORT=8080
+fi
 
-# Wait a bit for web server to start
+echo "Starting web server on port $PORT..."
+# Start PHP web server in background
+php -S 0.0.0.0:$PORT -t . > /tmp/webserver.log 2>&1 &
+WEBSERVER_PID=$!
+
+echo "Web server started on port $PORT (PID: $WEBSERVER_PID)"
 sleep 2
 
 # Start bot in foreground
