@@ -1,0 +1,9 @@
+run = "php bot_polling.php"
+language = "php-cli"
+entrypoint = "bot_polling.php"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "php bot_polling.php"]
