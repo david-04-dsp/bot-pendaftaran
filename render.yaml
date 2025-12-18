@@ -1,0 +1,30 @@
+# Render.yaml - Konfigurasi untuk Render.com
+services:
+  # Web Service untuk form pendaftaran
+  - type: web
+    name: mahasiswa-registration-web
+    env: php
+    plan: free
+    buildCommand: |
+      php -v
+    startCommand: php -S 0.0.0.0:$PORT
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: BASE_URL
+        sync: false
+    healthCheckPath: /index.html
+
+  # Background Worker untuk Bot Telegram
+  - type: worker
+    name: telegram-bot-worker
+    env: php
+    plan: free
+    buildCommand: |
+      php -v
+    startCommand: php bot_polling.php
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: BASE_URL
+        sync: false
