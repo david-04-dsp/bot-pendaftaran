@@ -5,8 +5,8 @@
 // Untuk localhost
 // $BASE_URL = 'http://localhost:8000';
 
-// Untuk ngrok (URL publik)
-$BASE_URL = 'https://wainable-configurationally-hortencia.ngrok-free.dev';
+// Untuk Replit (URL publik permanent)
+$BASE_URL = 'https://bot-pendaftaran--davids.replit.app';
 
 // Auto-detect dari HTTP_HOST jika ada
 if (isset($_SERVER['HTTP_HOST']) && !empty($_SERVER['HTTP_HOST'])) {
